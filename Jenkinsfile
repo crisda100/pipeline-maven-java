@@ -1,8 +1,5 @@
 pipeline {
     agent any
-	  parameters{
-		  string(name: 'PERSON',defaultValue: 'cristian', description: 'What your name?')
-	}
     stages {
 	stage('Checkout') {
             steps {
@@ -35,7 +32,7 @@ pipeline {
             steps {
                 echo 'Deploying...'
                 // Run the Java program with an example argument
-                sh 'java -cp target/your-app-1.0-SNAPSHOT.jar com.apasoft.ToUpper "${params.PERSON}"'
+                sh 'java -cp target/your-app-1.0-SNAPSHOT.jar com.apasoft.ToUpper "${name}"'
             }
         }
     }
