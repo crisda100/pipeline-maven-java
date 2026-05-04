@@ -1,7 +1,7 @@
 pipeline {
     agent any
 	  parameters{
-		  string(name: 'PERSON',description: 'What's your name?')
+		  string(name: 'PERSON',description: 'What your name?')
 	}
     stages {
 	stage('Checkout') {
